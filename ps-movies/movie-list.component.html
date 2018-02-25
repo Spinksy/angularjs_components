@@ -1,0 +1,30 @@
+<div>
+    <table class="table">
+        <tr>
+
+            <td>Title</td>
+            <td>Length</td>
+            <td>Rating</td>
+            <td>Actions</td>
+        </tr>
+
+
+        <tr ng-repeat="movie in vm.movies">
+            <td>{{movie.title}}</td>
+            <td>{{movie.length}}</td>
+            <td>
+                <movie-rating rating="movie.rating"></movie-rating>
+            </td>
+            <td>
+              
+              <button class="btn btn-sm btn-default" ng-click="vm.upRating(movie)">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </button>
+                <button class="btn btn-sm btn-default" ng-click="vm.downRating(movie)">
+                    <span class="glyphicon glyphicon-minus"></span>
+                </button>
+            </td>
+        </tr>
+    </table>
+    <button ng-click="vm.reset()">Reset</button>
+</div>
